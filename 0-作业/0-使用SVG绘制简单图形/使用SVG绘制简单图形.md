@@ -50,4 +50,4 @@ grammar_cjkRuby: true
 	- 使用D3设计交互式图表.pdf
 
 
-  [1]: ./images/1506778150050.jpg
+  [1]: ../00-pic/0-1.jpg
