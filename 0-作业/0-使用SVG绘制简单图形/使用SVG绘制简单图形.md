@@ -1,8 +1,9 @@
----
-title: 作业（一）：使用SVG绘制简单图形
-tags: 作业,D3
-grammar_cjkRuby: true
----
+
+
+##使用SVG绘制简单图形
+
+----------
+
 
 1.作业目的：
  - 熟悉pycharm开发环境
