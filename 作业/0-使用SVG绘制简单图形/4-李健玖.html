@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test1</title>
+    <style>
+        .svg-rect{
+        fill:yellow;
+        stroke:black;
+        }
+        .svg-circle{
+        fill:red;
+        stroke:black;
+        }
+        .svg-ellipse{
+        fill:green;
+        stroke:black;
+        }
+    </style>
+</head>
+<body>
+<svg width="1000"height="1000">
+    <rect x="20" y="20" width="100" height="50" class="svg-rect"/>
+    <text x="35" y="90">rect</text>
+    <circle cx="170" cy="50" r="30" class="svg-circle"/>
+    <text x="155" y="90">circle</text>
+    <ellipse cx="320" cy="50" rx="100" ry="25" class="svg-ellipse"/>
+    <text x="305" y="90">ellipse</text>
+    <line x1="0" y1="0" x2="450" y2="0" stroke="black" class="svg-line"/>
+    <line x1="450" y1="0" x2="450" y2="100" stroke="black"class="svg-line"/>
+    <line x1="450" y1="100" x2="0" y2="100" stroke="black"class="svg-line"/>
+    <line x1="0" y1="100" x2="0" y2="0" stroke="black"class="svg-line"/>
+
+</svg>
+</body>
+</html>
