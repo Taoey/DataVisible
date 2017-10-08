@@ -17,5 +17,5 @@
  	- 数据：见本文件夹"food.csv"
 
 
-  [1]: ../pic/1-1.png
+  [1]: ../images/1-1.png
   [2]: https://github.com/Taoey/DataVisible/blob/master/%E8%B5%84%E6%96%99/D3-getFileData.html
