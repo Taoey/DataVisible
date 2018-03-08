@@ -12,10 +12,10 @@
 
 
     //data show
-    var dataset = [ 1,5,10,15,20,25,30 ];
+    var dataset = [ 1,5,10,15,20,25,30,4,9,8,23 ];
 
     //svg width and height
-    var width=800;
+    var width=200;
     var heigth=600;
 
     //create svg
@@ -26,26 +26,48 @@
         //.style("background-color","aqua");
 
     //create histogram
-    var rectHeight=10   //数据放大倍数
+    var rectHeight=15   //高度放大倍数
+    var barPadding = 2;
 
     svg.selectAll("rect")
         .data(dataset)
         .enter()
         .append("rect")
         .attr("x", function (date,count) {
-            console.log(date);
-            return count * 21;
+            return  count * (width / dataset.length);
         })
         .attr("y", function (data) {
             return heigth - data * rectHeight;  //使条形图正立
         })
-        .attr("width", 20)
+        .attr("width", function () {
+            return width / dataset.length - barPadding
+        })
         .attr("height", function (data) {
             return data * rectHeight;       //放大数据
         })
         .attr("fill", function (data) {
             return "rgb(0, 0, " + (255 - (data * 5)) + ")";  //颜色填充
         });
+
+    //标签
+    svg.selectAll("text")
+        .data(dataset)
+        .enter()
+        .append("text")
+        .attr("x", function (date,count) {
+            return  count * (width / dataset.length) + (width / dataset.length - barPadding) / 2;
+        })
+        .attr("y", function (data) {
+            return heigth - data * rectHeight +13;  //使条形图正立
+        })
+        .text(function(data) {
+            return data;
+        })
+        .attr("text-anchor", "middle")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .attr("fill", "white");
+
 
 
 </script>
