@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柱状图</title>
+    <script src="d3.v3.js"></script>
+</head>
+<body>
+<script>
+
+    //get date from file
+
+
+    //data show
+    var dataset = [ 1,5,10,15,20,25,30 ];
+
+    //svg width and height
+    var width=800;
+    var heigth=600;
+
+    //create svg
+    var svg= d3.select("body")
+        .append("svg")
+        .attr("width",width)
+        .attr("height",heigth);
+        //.style("background-color","aqua");
+
+    //create histogram
+    var rectHeight=10   //数据放大倍数
+
+    svg.selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("x", function (date,count) {
+            console.log(date);
+            return count * 21;
+        })
+        .attr("y", function (data) {
+            return heigth - data * rectHeight;  //使条形图正立
+        })
+        .attr("width", 20)
+        .attr("height", function (data) {
+            return data * rectHeight;       //放大数据
+        })
+        .attr("fill", function (data) {
+            return "rgb(0, 0, " + (255 - (data * 5)) + ")";  //颜色填充
+        });
+
+
+</script>
+
+
+</body>
+</html>
